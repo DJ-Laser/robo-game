@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://c41it8laemtxj"]
+
+[ext_resource type="PackedScene" uid="uid://yexpb7bag6vq" path="res://editor.tscn" id="1_wwykp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="UI Layer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI Layer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI Layer/Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 265.0
+grow_vertical = 2
+
+[node name="Editor" parent="UI Layer/Control/HBoxContainer" instance=ExtResource("1_wwykp")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI Layer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="UI Layer/Control/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
