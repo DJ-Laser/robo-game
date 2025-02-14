@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://yexpb7bag6vq"]
+
+[ext_resource type="Script" path="res://components/editor/editor.gd" id="1_mlnbe"]
+
+[node name="Editor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mlnbe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="MenuContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="RunButton" type="Button" parent="VBoxContainer/MenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Run code"
+
+[node name="CodeEditor" type="CodeEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "forward 100
+two 200, 40
+yeet"
+caret_blink = true
+gutters_draw_line_numbers = true
+
+[connection signal="pressed" from="VBoxContainer/MenuContainer/RunButton" to="." method="_on_run_button_pressed"]

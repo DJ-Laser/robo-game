@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c41it8laemtxj"]
 
-[ext_resource type="PackedScene" uid="uid://yexpb7bag6vq" path="res://editor.tscn" id="1_wwykp"]
+[ext_resource type="PackedScene" uid="uid://yexpb7bag6vq" path="res://components/editor/editor.tscn" id="1_fl1u5"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,7 +21,7 @@ anchor_bottom = 1.0
 offset_right = 265.0
 grow_vertical = 2
 
-[node name="Editor" parent="UI Layer/Control/HBoxContainer" instance=ExtResource("1_wwykp")]
+[node name="Editor" parent="UI Layer/Control/HBoxContainer" instance=ExtResource("1_fl1u5")]
 layout_mode = 2
 size_flags_horizontal = 3
 
