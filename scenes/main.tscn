@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c41it8laemtxj"]
+[gd_scene load_steps=5 format=3 uid="uid://c41it8laemtxj"]
 
 [ext_resource type="PackedScene" uid="uid://yexpb7bag6vq" path="res://components/editor/editor.tscn" id="1_fl1u5"]
+[ext_resource type="Texture2D" uid="uid://cq14l5pev212c" path="res://icon.svg" id="2_68r60"]
+[ext_resource type="PackedScene" uid="uid://wyqd3bjwhfmn" path="res://components/player/player.tscn" id="3_bu881"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odspb"]
+size = Vector2(128, 124)
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,9 +26,10 @@ anchor_bottom = 1.0
 offset_right = 265.0
 grow_vertical = 2
 
-[node name="Editor" parent="UI Layer/Control/HBoxContainer" instance=ExtResource("1_fl1u5")]
+[node name="Editor" parent="UI Layer/Control/HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_fl1u5")]
 layout_mode = 2
 size_flags_horizontal = 3
+player = NodePath("../../../../Player")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI Layer/Control"]
 layout_mode = 1
@@ -37,3 +43,17 @@ grow_horizontal = 0
 [node name="ColorRect" type="ColorRect" parent="UI Layer/Control/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(834, 851)
+scale = Vector2(8.62662, -0.904759)
+
+[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_68r60")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.246045, -1.17333)
+shape = SubResource("RectangleShape2D_odspb")
+
+[node name="Player" parent="." instance=ExtResource("3_bu881")]
+position = Vector2(448, 732)

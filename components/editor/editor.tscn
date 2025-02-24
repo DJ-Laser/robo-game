@@ -35,8 +35,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "forward 100
-two 200, 40
-yeet"
+wait 60
+jump 10"
 caret_blink = true
 gutters_draw_line_numbers = true
 
